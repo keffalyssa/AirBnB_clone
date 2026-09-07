@@ -1,25 +1,32 @@
 #!/usr/bin/python3
-"""
-Unittests for the Review class.
-"""
+"""Unittests for the Review class."""
 import unittest
 from models.review import Review
+from models.base_model import BaseModel
 
 
 class TestReview(unittest.TestCase):
-    """Test cases for the Review class."""
+    """Test the instantiation and attributes of the Review class."""
 
-    def test_inheritance(self):
+    def test_is_subclass(self):
         """Test that Review inherits from BaseModel."""
-        r = Review()
-        self.assertIsInstance(r, Review)
+        self.assertTrue(issubclass(Review, BaseModel))
 
     def test_attributes(self):
-        """Test that Review has required attributes."""
+        """Test public class attributes of Review."""
+        self.assertTrue(hasattr(Review, "place_id"))
+        self.assertTrue(hasattr(Review, "user_id"))
+        self.assertTrue(hasattr(Review, "text"))
+        self.assertEqual(Review.place_id, "")
+        self.assertEqual(Review.user_id, "")
+        self.assertEqual(Review.text, "")
+
+    def test_types(self):
+        """Test attribute types."""
         r = Review()
-        self.assertTrue(hasattr(r, "place_id"))
-        self.assertTrue(hasattr(r, "user_id"))
-        self.assertTrue(hasattr(r, "text"))
+        self.assertIsInstance(r.place_id, str)
+        self.assertIsInstance(r.user_id, str)
+        self.assertIsInstance(r.text, str)
 
 
 if __name__ == "__main__":

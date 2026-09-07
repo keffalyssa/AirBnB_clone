@@ -1,23 +1,26 @@
 #!/usr/bin/python3
-"""
-Unittests for the Amenity class.
-"""
+"""Unittests for the Amenity class."""
 import unittest
 from models.amenity import Amenity
+from models.base_model import BaseModel
 
 
 class TestAmenity(unittest.TestCase):
-    """Test cases for the Amenity class."""
+    """Test the instantiation and attributes of the Amenity class."""
 
-    def test_inheritance(self):
+    def test_is_subclass(self):
         """Test that Amenity inherits from BaseModel."""
-        a = Amenity()
-        self.assertIsInstance(a, Amenity)
+        self.assertTrue(issubclass(Amenity, BaseModel))
 
     def test_attributes(self):
-        """Test that Amenity has required attributes."""
+        """Test public class attributes of Amenity."""
+        self.assertTrue(hasattr(Amenity, "name"))
+        self.assertEqual(Amenity.name, "")
+
+    def test_types(self):
+        """Test attribute types."""
         a = Amenity()
-        self.assertTrue(hasattr(a, "name"))
+        self.assertIsInstance(a.name, str)
 
 
 if __name__ == "__main__":
