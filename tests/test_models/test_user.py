@@ -1,26 +1,36 @@
 #!/usr/bin/python3
-"""
-Unittests for the User class.
-"""
+"""Defines unittests for models/user.py."""
 import unittest
 from models.user import User
+from models.base_model import BaseModel
 
 
 class TestUser(unittest.TestCase):
-    """Test cases for the User class."""
+    """Unittests for testing instantiation of the User class."""
 
-    def test_inheritance(self):
-        """Test that User inherits from BaseModel."""
-        u = User()
-        self.assertIsInstance(u, User)
+    def test_is_subclass(self):
+        """Check that User is a subclass of BaseModel."""
+        self.assertTrue(issubclass(User, BaseModel))
 
     def test_attributes(self):
-        """Test that User has required attributes."""
+        """Check that User has the correct attributes and default values."""
+        self.assertTrue(hasattr(User, "email"))
+        self.assertTrue(hasattr(User, "password"))
+        self.assertTrue(hasattr(User, "first_name"))
+        self.assertTrue(hasattr(User, "last_name"))
+        self.assertEqual(User.email, "")
+        self.assertEqual(User.password, "")
+        self.assertEqual(User.first_name, "")
+        self.assertEqual(User.last_name, "")
+
+    def test_types(self):
+        """Check types of User attributes."""
         u = User()
-        self.assertTrue(hasattr(u, "email"))
-        self.assertTrue(hasattr(u, "password"))
-        self.assertTrue(hasattr(u, "first_name"))
-        self.assertTrue(hasattr(u, "last_name"))
+        self.assertIsInstance(u.email, str)
+        self.assertIsInstance(u.password, str)
+        self.assertIsInstance(u.first_name, str)
+        self.assertIsInstance(u.last_name, str)
+        self.assertIsInstance(u.id, str)
 
 
 if __name__ == "__main__":
