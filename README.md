@@ -1,23 +1,14 @@
-# AirBnB Clone - The Console
+# AI: Dynamic Web Lab Generation for Core CSS Concepts
 
-## Description
-The AirBnB clone project is the first step towards building a full web application modeled after Airbnb. This initial milestone focuses on building a **command interpreter** (the console) to manage objects for the AirBnB backend. 
+This folder contains the deliverables and code files generated through sequential and contextual AI prompting for visualizing core CSS concepts (Box Model, Flexbox, and Grid).
 
-The console allows creation, retrieval, updating, and destruction of objects (User, State, City, Place, Amenity, Review) using an abstraction called file storage. It handles serialization and deserialization of instances to and from JSON files.
+## Files Included
+* **box_model_lab.html** (or your filename): The interactive single-file HTML/CSS/JS application for visualizing the CSS Box Model with individual side controls.
+* **flex_grid_playground.html** (or your filename): The interactive playground for exploring CSS Flexbox and Grid layout properties.
 
----
+## AI Tools Used
+* **AI Tool:** Gemini (with Canvas)
+* **Prompting Strategy:** Sequential and contextual prompt engineering, starting with a baseline Box Model lab and refining it iteratively to add side-specific controls before building a separate Flexbox/Grid playground.
 
-## Command Interpreter Features
-* Create a new object (e.g., a new User or a new Place)
-* Retrieve an object from a file, a database, etc.
-* Do operations on objects: count, compute stats, etc.
-* Update attributes of an object
-* Destroy an object
-
----
-
-## How to Start It
-To run the command interpreter in interactive mode, clone the repository and execute the `console.py` script from your terminal:
-
-```bash
-$ ./console.py
+## Learning Outcomes
+Using AI to instantly generate and manipulate interactive web labs allowed for rapid experimentation with layout properties (`display`, `margin`, `padding`, `flex-direction`, etc.), bridging the gap between abstract CSS theory and visual feedback.
